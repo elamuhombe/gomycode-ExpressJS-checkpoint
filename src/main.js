@@ -1,5 +1,6 @@
 // Import modules
 const express = require('express');
+const path = require('path'); 
 
 // Create an instance of the express server
 const app = express();
@@ -21,3 +22,7 @@ const workingHoursMiddleware = (req, res, next) => {
 app.use(workingHoursMiddleware);
 // Set the view engine to EJS
 app.set('view engine', 'ejs');
+
+// Define the directory for static files
+const publicDirectoryPath = path.join(__dirname, 'public');
+app.use(express.static(publicDirectoryPath));
