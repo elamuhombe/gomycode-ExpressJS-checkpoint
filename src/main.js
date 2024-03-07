@@ -17,5 +17,7 @@ const workingHoursMiddleware = (req, res, next) => {
         res.status(403).send('Sorry, the app is only accessible during working hours (9am to 5pm) from Monday to Friday.');
     }
 };
-//Apply the workingHoursMiddleware to all routes
+// Apply the workingHoursMiddleware to all routes
 app.use(workingHoursMiddleware);
+// Set the view engine to EJS
+app.set('view engine', 'ejs');
