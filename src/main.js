@@ -31,7 +31,7 @@ app.use(express.static(publicDirectoryPath));
 
 // Define a route handler for the root URL
 app.get('/', (req, res) => {
-    res.render('home', { title: 'Welcome to My Express App!' });
+    res.render('home');
 });
 
 // Start the server and listen on the specified port
