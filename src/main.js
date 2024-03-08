@@ -13,7 +13,7 @@ const workingHoursMiddleware = (req, res, next) => {
     const hour = now.getHours();
 
     // Check if it's a weekday (Monday to Friday) and between 9am and 5pm
-    if (day >= 1 && day <= 5 && hour >= 9 && hour < 23) {
+    if (day >= 1 && day <= 5 && hour >= 6 && hour < 23) {
         next(); // Proceed to the next middleware/route handler
     } else {
         res.status(403).send('Sorry, the app is only accessible during working hours (9am to 5pm) from Monday to Friday.');
@@ -21,11 +21,12 @@ const workingHoursMiddleware = (req, res, next) => {
 };
 // Apply the workingHoursMiddleware to all routes
 app.use(workingHoursMiddleware);
-// Set the view engine to EJS
+// Set the view engine to EJS and specify the views directory
 app.set('view engine', 'ejs');
+app.set('views', path.join(__dirname,'views'));
 
 // Define the directory for static files
-const publicDirectoryPath = path.join(__dirname, 'public');
+const publicDirectoryPath = path.join(__dirname,  'public');
 app.use(express.static(publicDirectoryPath));
 
 // Define a route handler for the root URL
