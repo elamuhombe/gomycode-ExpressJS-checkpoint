@@ -1,6 +1,7 @@
 // Import modules
 const express = require('express');
 const path = require('path'); 
+const port = 5000;
 
 // Create an instance of the express server
 const app = express();
@@ -30,4 +31,9 @@ app.use(express.static(publicDirectoryPath));
 // Define a route handler for the root URL
 app.get('/', (req, res) => {
     res.render('home', { title: 'Welcome to My Express App!' });
+});
+
+// Start the server and listen on the specified port
+app.listen(port, () => {
+    console.log(`Server is running on port ${port}`);
 });
