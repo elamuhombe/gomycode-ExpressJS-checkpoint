@@ -26,3 +26,8 @@ app.set('view engine', 'ejs');
 // Define the directory for static files
 const publicDirectoryPath = path.join(__dirname, 'public');
 app.use(express.static(publicDirectoryPath));
+
+// Define a route handler for the root URL
+app.get('/', (req, res) => {
+    res.render('home', { title: 'Welcome to My Express App!' });
+});
