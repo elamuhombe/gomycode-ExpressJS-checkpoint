@@ -34,6 +34,15 @@ app.get('/', (req, res) => {
     res.render('home');
 });
 
+app.get('/service', (req, res) => {
+    res.render('service');
+});
+
+app.get('/contact', (req, res) => {
+    res.render('contact');
+});
+
+
 // Start the server and listen on the specified port
 app.listen(port, () => {
     console.log(`Server is running on port ${port}`);
