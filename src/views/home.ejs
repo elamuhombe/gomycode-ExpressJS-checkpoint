@@ -4,24 +4,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home Page</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
 
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
 <body>
-    <!-- header section -->
-    <header>
+    <!-- wrapper -->
+    <div class="pl-40 font-averta-demo">
+        <!-- header section -->
+    <header class="flex flex-row justify-between">
         <!-- business logo -->
         <logo>
-            A+ Studio
+            A+ Studio 
         </logo>
-        <!-- navigation links -->
-        <nav>
-            <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="/service">Our Services</a></li>
-                <li><a href="/contact">Contact Us</a></li>
-            </ul>
-        </nav>
+       <!-- Hamburger Menu Icon -->
+<div class="flex items-center justify-center lg:hidden">
+    <button id="hamburger-icon" class="text-gray-800 hover:text-gray-600 focus:outline-none">
+      <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M4 6H20M4 12H20M4 18H20" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </button>
+  </div>
+  
+  <!-- Navigation Menu -->
+  <nav id="navigation-menu" class="hidden bg-gray-200 p-4 pt-0  lg:flex lg:bg-transparent">
+    <ul class="flex flex-col space-y-2 lg:flex-row gap-x-4">
+      <li><a href="/" class="text-gray-800 hover:text-gray-600">Home</a></li>
+      <li><a href="/service" class="text-gray-800 hover:text-gray-600">Services</a></li>
+      <li><a href="/contact" class="text-gray-800 hover:text-gray-600">Contact</a></li>
+    </ul>
+  </nav>
+  <!-- JavaScript to toggle visibility of navigation menu -->
+  <script src="js/scripts.js"></script>
     </header>
     <!-- end of header section -->
     <!-- main section -->
@@ -132,7 +146,14 @@
                 <ul>
                     <li>Web Design</li>
                     <li>App Design</li>
-                    <li>Social Media Manage</li>
+                    <li>Social Media Manage</li><!-- Navigation Menu -->
+                    <nav id="navigation-menu" class="hidden bg-gray-200 p-4 lg:flex flex-row">
+                      <ul class="flex flex-col space-y-2">
+                        <li><a href="/" class="text-gray-800 hover:text-gray-600">Home</a></li>
+                        <li><a href="/service" class="text-gray-800 hover:text-gray-600">Services</a></li>
+                        <li><a href="/contact" class="text-gray-800 hover:text-gray-600">Contact</a></li>
+                      </ul>
+                    </nav>
                     <li>Market Analysis Project</li>
                 </ul>
             </nav>
@@ -183,5 +204,8 @@
      </footer>
      <!-- end of footer section -->
   
-</body>
+
+    </div>
+    <!-- end of wrapper -->
+    </body>
 </html>
