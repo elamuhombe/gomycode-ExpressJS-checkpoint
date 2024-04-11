@@ -13,7 +13,7 @@ const workingHoursMiddleware = (req, res, next) => {
     const hour = now.getHours();
 
     // Check if it's a weekday (Monday to Friday) and between 9am and 5pm
-    if (day >= 1 && day <= 6 && hour >= 6 && hour < 23) {
+    if (day >= 1 && day <= 5 && hour >= 9 && hour < 17) {
         next(); // Proceed to the next middleware/route handler
     } else {
         res.status(403).send('Sorry, the app is only accessible during working hours (9am to 5pm) from Monday to Friday.');
